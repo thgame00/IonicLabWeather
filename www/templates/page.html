@@ -1,0 +1,27 @@
+<ion-view title="Page" id="page1">
+  <ion-content padding="true" class="has-header">
+    <h1 id="page-heading1" style="color:#000000;">Lab 2</h1>
+    
+    <div id="page-markdown1" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">City:</p>
+    </div>
+    
+    <form id="page-form1" class="list">
+      <label class="item item-input" id="page-input1">
+        <span class="input-label">Input</span>
+        <input type="text" placeholder="" ng-model="mdl.city">    <!-- always include ng-model -->
+      </label>
+    </form>
+    <form id="page-form2" class="list">
+      <!-- initializing input for passing to other page, changes have to be done as well in routes.js and page you're passing to -->
+      <button id="page-button1" class="button button-positive button-block" 
+      ui-sref="page2({ city: mdl.city })">Check Weather in this city</button>
+      <!-- ui-sref to send to next page, page_id({ varNameForPage2: mdl.varNameCurrentPage }) -->
+
+      <button id="page-button2" class="button button-positive button-block"
+      ng-click="resetButton()">Reset</button>
+    </form>
+  </ion-content>
+</ion-view>
+
+<!-- ng-click only functions in controller of the page, for passing to other page you need to use ui-sref!! -->
